@@ -59,3 +59,45 @@ FROM SQLTutorial.dbo.EmployeeDemographics
 --SET EmployeeID = 1010 WHERE FirstName = 'Kevin' AND LastName = 'Malone'
 DELETE FROM SQLTutorial.dbo.EmployeeDemographics
 Where EmployeeID =  1010
+SELECT TOP (1000) [EmployeeID]
+      ,[FirstName]
+      ,[LastName]
+      ,[Age]
+      ,[Gender]
+  FROM [SQLTutorial].[dbo].[EmployeeDemographics]
+SELECT Gender, COUNT(Gender) AS CountGender
+FROM EmployeeDemographics
+where Age > 31
+Group By Gender
+Order by Gender ASC
+Select * From EmployeeDemographics
+Order by 4 ASC, 5 DESC
+SELECT *
+From SQLTutorial.dbo.EmployeeDemographics
+right outer join SQLTutorial.dbo.EmployeeSalary
+ON EmployeeDemographics.EmployeeID = EmployeeSalary.EmployeeID
+SELECT EmployeeSalary.EmployeeID, FirstName, LastName, JobTitle, Salary
+FROM SQLTutorial.dbo.EmployeeDemographics
+Right Outer join SQLTutorial.dbo.EmployeeSalary
+      ON EmployeeDemographics.EmployeeID = EmployeeSalary.EmployeeID 
+SELECT EmployeeDemographics.EmployeeID, FirstName, LastName, JobTitle, Salary
+FROM SQLTutorial.dbo.EmployeeDemographics
+Full Outer join SQLTutorial.dbo.EmployeeSalary
+      ON EmployeeDemographics.EmployeeID = EmployeeSalary.EmployeeID 
+SELECT *
+FROM SQLTutorial.dbo.EmplyoeeDemographics
+Full Outer Join SQL
+Create Table wareHouseEmployeeDemographics
+(EmployeeID int, 
+FirstName varchar(50),
+LastName varchar (50),
+Age int,
+Gender varchar (50)
+)
+Insert into WareHouseEmployeeDemographics VALUES
+(1013, 'Darryl', 'Philbin', NULL, 'Male'),
+(1050, 'Roy', 'Anderson', 31, 'Male'),
+(1051, 'Hidetoshi', 'Hasagawa', 40, 'Male'),
+(1052, 'Val', 'Johnson', 31, 'Female')
+--Select * 
+--From SQLTutorial.dbo.WareHouseEmployeeDemographics
